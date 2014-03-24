@@ -32,7 +32,9 @@ module WashOut
         soap_action.gsub!(/^(#{namespace}(\/|#)?)?([^"]*)$/, '\3')
       end
 
-      env['wash_out.soap_action'] = soap_action
+      operations = Hash[controller.soap_actions.map{ |operation| [operation[1][:action_name], operation[0]] }]
+
+      env['wash_out.soap_action'] = operations[soap_action]
     end
 
     def nori(snakecase=false)
