@@ -1,4 +1,4 @@
-<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="ZeWebService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="addReferral" targetNamespace="ZeWebService">
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="ZeWebService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="add_referral" targetNamespace="ZeWebService">
 <types>
 <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="ZeWebService">
 <xsd:complexType name="CvtyApi..AddReferral">
@@ -147,13 +147,13 @@
 <message name="AddreferralResponse">
 <part name="return" type="typens:CvtyApi..AddReferralResponse"/>
 </message>
-<portType name="addReferralAddReferralPort">
+<portType name="add_referral_port">
 <operation name="Addreferral">
 <input message="typens:Addreferral"/>
 <output message="typens:AddreferralResponse"/>
 </operation>
 </portType>
-<binding name="addReferralAddReferralBinding" type="typens:addReferralAddReferralPort">
+<binding name="add_referral_binding" type="typens:AddReferralPort">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
 <operation name="Addreferral">
 <soap:operation soapAction="/add_referral/api/Addreferral"/>
@@ -165,9 +165,9 @@
 </output>
 </operation>
 </binding>
-<service name="addReferralService">
-<port name="addReferralAddReferralPort" binding="typens:addReferralAddReferralBinding">
-<soap:address location="https://test.danestreet.com/add_referral/api"/>
+<service name="service">
+<port name="AddReferralPort" binding="typens:AddReferralBinding">
+<soap:address location="http://localhost:3000/add_referral/action"/>
 </port>
 </service>
 </definitions>
