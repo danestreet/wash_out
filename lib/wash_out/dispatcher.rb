@@ -76,7 +76,7 @@ module WashOut
     def _generate_wsdl
       @map       = self.class.soap_actions
       @namespace = soap_config.namespace
-      @name      = "addReferral"
+      @name      = "add_referral"
 
       # render :template => "wash_with_soap/coventry/wsdl", :layout => false,
       #        :content_type => 'text/xml', :formats => [:xml], :handlers => :builder
