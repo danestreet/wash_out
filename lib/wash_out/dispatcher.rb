@@ -80,7 +80,7 @@ module WashOut
       @name      = controller_path.gsub('/', '_')
 
       render :template => "wash_with_soap/coventry/wsdl", :layout => false,
-             :content_type => 'text/xml'
+             :content_type => 'text/xml', :formats => [:xml], :handlers => :builder
       # render :template => "wash_with_soap/#{soap_config.wsdl_style}/wsdl", :layout => false,
       #        :content_type => 'text/xml'
     end
