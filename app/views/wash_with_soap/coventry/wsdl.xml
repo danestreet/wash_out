@@ -167,7 +167,7 @@
 </binding>
 <service name="addReferralService">
 <port name="addReferralAddReferralPort" binding="typens:addReferralAddReferralBinding">
-<soap:address location="http://localhost:3000/add_referral/api"/>
+<soap:address location="https://test.danestreet.com/add_referral/api"/>
 </port>
 </service>
 </definitions>
