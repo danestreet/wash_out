@@ -147,13 +147,13 @@
 <message name="AddreferralResponse">
 <part name="return" type="typens:CvtyApi..AddReferralResponse"/>
 </message>
-<portType name="add_referral_port">
+<portType name="add_referralAddReferralPort">
 <operation name="Addreferral">
 <input message="typens:Addreferral"/>
 <output message="typens:AddreferralResponse"/>
 </operation>
 </portType>
-<binding name="add_referral_binding" type="typens:AddReferralPort">
+<binding name="add_referralAddReferralBinding" type="typens:add_referralAddReferralPort">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
 <operation name="Addreferral">
 <soap:operation soapAction="/add_referral/api/Addreferral"/>
@@ -165,9 +165,9 @@
 </output>
 </operation>
 </binding>
-<service name="service">
-<port name="AddReferralPort" binding="typens:AddReferralBinding">
-<soap:address location="http://localhost:3000/add_referral/action"/>
+<service name="add_referralService">
+<port name="add_referralAddReferralPort" binding="typens:add_referralAddReferralBinding">
+<soap:address location="http://localhost:3000/add_referral/api"/>
 </port>
 </service>
 </definitions>
