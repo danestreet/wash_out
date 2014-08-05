@@ -1,0 +1,173 @@
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="ZeWebService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="add_referral" targetNamespace="ZeWebService">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="ZeWebService">
+      <xsd:complexType name="CvtyApi..AddReferral">
+        <xsd:all>
+          <xsd:element name="referral_data" type="typens:ZeWebService..Referral"/>
+          <xsd:element name="claimant_data" type="typens:ZeWebService..Claimant"/>
+          <xsd:element name="user_info" type="typens:ZeWebService..User"/>
+          <xsd:element name="provider_data" type="typens:ZeWebService..Provider"/>
+          <xsd:element name="doc_attachments" type="typens:ZeWebService..PageArray"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ZeWebService..User">
+        <xsd:all>
+          <xsd:element name="password" type="xsd:string"/>
+          <xsd:element name="userid" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ZeWebService..ContactsArray">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="typens:ZeWebService..Contacts[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="StringArray">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ZeWebService..Contacts">
+        <xsd:all>
+          <xsd:element name="CONTACT_ZIP" type="xsd:string"/>
+          <xsd:element name="CONTACT_ADDRESS" type="xsd:string"/>
+          <xsd:element name="CONTACT_EMAIL" type="xsd:string"/>
+          <xsd:element name="CONTACT_STATE" type="xsd:string"/>
+          <xsd:element name="CONTACT_FAX" type="xsd:string"/>
+          <xsd:element name="CONTACT_CITY" type="xsd:string"/>
+          <xsd:element name="CONTACT_NAME" type="xsd:string"/>
+          <xsd:element name="CONTACT_TYPE" type="xsd:string"/>
+          <xsd:element name="CONTACT_PHONE" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ZeWebService..Claimant">
+        <xsd:all>
+          <xsd:element name="EMP_ZIP" type="xsd:string"/>
+          <xsd:element name="CLAIM_NUMBER" type="xsd:string"/>
+          <xsd:element name="CITY" type="xsd:string"/>
+          <xsd:element name="EMP_CITY" type="xsd:string"/>
+          <xsd:element name="FIRST_NAME" type="xsd:string"/>
+          <xsd:element name="STATE" type="xsd:string"/>
+          <xsd:element name="OCCUPATION" type="xsd:string"/>
+          <xsd:element name="LAST_NAME" type="xsd:string"/>
+          <xsd:element name="INJURY_BODY_PART" type="xsd:string"/>
+          <xsd:element name="ADDRESS2" type="xsd:string"/>
+          <xsd:element name="EMP_STATE" type="xsd:string"/>
+          <xsd:element name="EMP_ID" type="xsd:string"/>
+          <xsd:element name="SSN" type="xsd:string"/>
+          <xsd:element name="EMP_ADDRESS" type="xsd:string"/>
+          <xsd:element name="DOB" type="xsd:dateTime"/>
+          <xsd:element name="PATIENT_ID" type="xsd:string"/>
+          <xsd:element name="EMP_PHONE" type="xsd:string"/>
+          <xsd:element name="TPA_REQUEST_ID" type="xsd:string"/>
+          <xsd:element name="INJURY_NATURE" type="xsd:string"/>
+          <xsd:element name="ZIP" type="xsd:string"/>
+          <xsd:element name="EMP_NAME" type="xsd:string"/>
+          <xsd:element name="GENDER" type="xsd:string"/>
+          <xsd:element name="CONTACTS_INFO" type="typens:ZeWebService..ContactsArray"/>
+          <xsd:element name="ADDRESS" type="xsd:string"/>
+          <xsd:element name="INJURY_DESC" type="xsd:string"/>
+          <xsd:element name="CLIENT_ID" type="xsd:string"/>
+          <xsd:element name="INJURY_DATE" type="xsd:dateTime"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ZeWebService..Referral">
+        <xsd:all>
+          <xsd:element name="REQUEST_RECEIVED_DATE" type="xsd:dateTime"/>
+          <xsd:element name="DIAGNOSIS_CODE" type="typens:StringArray"/>
+          <xsd:element name="PR_REVIEW_TYPE" type="xsd:string"/>
+          <xsd:element name="URGENCY_EXPEDITED" type="xsd:string"/>
+          <xsd:element name="PR_QUESTIONS" type="xsd:string"/>
+          <xsd:element name="EPISODE_ID" type="xsd:string"/>
+          <xsd:element name="CURRENT_CONDITION" type="xsd:string"/>
+          <xsd:element name="DUE_DATE" type="xsd:dateTime"/>
+          <xsd:element name="NOTES" type="soapenc:base64"/>
+          <xsd:element name="EPISODE_TYPE" type="xsd:string"/>
+          <xsd:element name="ADDITIONAL_INFO" type="xsd:string"/>
+          <xsd:element name="REQUEST_SPECIALTY" type="xsd:string"/>
+          <xsd:element name="STATE_OF_JURISDICTION" type="xsd:string"/>
+          <xsd:element name="PROCEDURE_CODE" type="xsd:string"/>
+          <xsd:element name="WINDOW_OF_OPPORTUNITY" type="xsd:string"/>
+          <xsd:element name="PR_REVIEW_CLASSIFICATION" type="xsd:string"/>
+          <xsd:element name="PRV_EPISODE_ID" type="xsd:string"/>
+          <xsd:element name="ISSUES_TO_BE_ADDRESSED" type="xsd:string"/>
+          <xsd:element name="REASON_REFERRAL_CD" type="xsd:string"/>
+          <xsd:element name="FROM_PROVIDER_COMMENTS" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="CvtyApi..AddReferralResponse">
+        <xsd:all>
+          <xsd:element name="retval" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ZeWebService..Provider">
+        <xsd:all>
+          <xsd:element name="PROVIDER_ID" type="xsd:string"/>
+          <xsd:element name="ADDRESS_LINE_2" type="xsd:string"/>
+          <xsd:element name="FIRST_NAME" type="xsd:string"/>
+          <xsd:element name="FAX" type="xsd:string"/>
+          <xsd:element name="CITY" type="xsd:string"/>
+          <xsd:element name="COUNTY" type="xsd:string"/>
+          <xsd:element name="MIDDLE_NAME" type="xsd:string"/>
+          <xsd:element name="LAST_NAME" type="xsd:string"/>
+          <xsd:element name="EMAIL" type="xsd:string"/>
+          <xsd:element name="PHONE" type="xsd:string"/>
+          <xsd:element name="ADDRESS_LINE_1" type="xsd:string"/>
+          <xsd:element name="SPECIALTY_CD" type="typens:StringArray"/>
+          <xsd:element name="ADDRESS_TYPE" type="xsd:string"/>
+          <xsd:element name="ZIP" type="xsd:string"/>
+          <xsd:element name="PHONE_EXT" type="xsd:string"/>
+          <xsd:element name="COUNTRY_CD" type="xsd:string"/>
+          <xsd:element name="STATE_CD" type="xsd:string"/>
+          <xsd:element name="CELL_PHONE" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ZeWebService..PageArray">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="typens:ZeWebService..Page[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ZeWebService..Page">
+        <xsd:all>
+          <xsd:element name="DOCUMENT_TYPE" type="xsd:string"/>
+          <xsd:element name="DOCUMENT_NAME" type="xsd:string"/>
+          <xsd:element name="DCN" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="Addreferral">
+    <part name="param0" type="typens:CvtyApi..AddReferral"/>
+  </message>
+  <message name="AddreferralResponse">
+    <part name="return" type="typens:CvtyApi..AddReferralResponse"/>
+  </message>
+  <portType name="add_referralAddReferralPort">
+    <operation name="Addreferral">
+      <input message="typens:Addreferral"/>
+      <output message="typens:AddreferralResponse"/>
+    </operation>
+  </portType>
+  <binding name="add_referralAddReferralBinding" type="typens:add_referralAddReferralPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="Addreferral">
+      <soap:operation soapAction="/add_referral/api/Addreferral"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="ZeWebService"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="ZeWebService"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="add_referralService">
+    <port name="add_referralAddReferralPort" binding="typens:add_referralAddReferralBinding">
+      <soap:address location="https://test.danestreet.com/add_referral/api"/>
+    </port>
+  </service>
+</definitions>

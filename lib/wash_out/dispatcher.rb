@@ -78,8 +78,11 @@ module WashOut
       @namespace = soap_config.namespace
       @name      = "add_referral"
 
-      render :template => "wash_with_soap/coventry/wsdl", :layout => false,
-             :content_type => 'text/xml', :formats => [:xml], :handlers => :builder
+      if Rails.env.development?
+        render :template => "wash_with_soap/coventry/development_wsdl", :layout => false, :content_type => 'text/xml', :formats => [:xml], :handlers => :builder
+      else
+        render :template => "wash_with_soap/coventry/staging_wsdl", :layout => false, :content_type => 'text/xml', :formats => [:xml], :handlers => :builder
+      end
       # render :template => "wash_with_soap/#{soap_config.wsdl_style}/wsdl", :layout => false,
       #        :content_type => 'text/xml'
     end
